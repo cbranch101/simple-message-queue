@@ -1,6 +1,6 @@
 {
     "name": "simple-message-queue",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Simple Message Queue",
     "source": "src/index.js",
     "main": "dist/main.js",

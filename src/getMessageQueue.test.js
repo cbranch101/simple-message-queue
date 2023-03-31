@@ -35,7 +35,7 @@ describe('getMessageQueue', () => {
             mockWindow.addEventListener((message) => handleMessage(message))
         },
         commands: {
-            open: () => true,
+            simpleValue: () => 'foo',
             errorExample: () => Promise.reject(Error('an error')),
         },
     })
@@ -49,8 +49,8 @@ describe('getMessageQueue', () => {
         },
     })
     test('should allow message communication', async () => {
-        const openValue = await server.sendMessage('open')
-        expect(openValue).toEqual(true)
+        const simpleValue = await server.sendMessage('simpleValue')
+        expect(simpleValue).toEqual('foo')
         const getStateValue = await client.sendMessage('getState')
         expect(getStateValue).toEqual({ foo: 'bar' })
         expect(server.sendMessage('errorExample')).rejects.toEqual(
