@@ -55,7 +55,7 @@ const getMessageQueue = ({ send, registerReceive, commands = {} }) => {
                 .catch((error) => reject(error))
             return
         }
-        resolve(true)
+        resolve(returnValue)
     }
 
     registerReceive({ handleMessage })
